@@ -28,6 +28,10 @@ h6 {
 
 body {
     background-image: url(/img/thumb-1920-1103575.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 820px;
 }
 
 header {
@@ -59,14 +63,44 @@ header div:last-child > a {
     color: red;
 }
 
+header .active {
+    position: relative;
+}
+
+header .active::before {
+    content: '';
+    position: absolute;
+    border: 2px solid red;
+    bottom: -5px;
+    left: -5px;
+    width: 120%;
+}
+
 aside {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     width: 60%;
     top: 50px;
     left: 50%;
     transform: translate(25%, 40%);
+}
+
+@media (max-width: 1440px) {
+    aside {
+        width: 20px;
+        top: 50px;
+        transform: translate(45px, 120px);
+
+    }
+
+    .box-down-aside {
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        gap: 1.5rem;
+
+    }
+
+    body {
+        height: 900px;
+    }
 }
 
 aside .box-down-aside {
@@ -131,9 +165,3 @@ aside .box-down-aside {
     font-size: 13px;
     cursor: pointer;
 }
-
-
-
-
-
-
